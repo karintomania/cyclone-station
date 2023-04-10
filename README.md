@@ -76,28 +76,7 @@ The sample response looks like:
         "description": "test description",
         "created_at": "2023-04-10T08:38:43.000000Z",
         "updated_at": "2023-04-10T08:38:43.000000Z",
-        "colours": [
-            {
-                "id": 25,
-                "item_id": 9,
-                "colour": "#123456"
-            },
-            {
-                "id": 26,
-                "item_id": 9,
-                "colour": "#234567"
-            },
-            {
-                "id": 27,
-                "item_id": 9,
-                "colour": "#345678"
-            },
-            {
-                "id": 28,
-                "item_id": 9,
-                "colour": "#456789"
-            }
-        ]
+        "colours": ["#123456", "#234567", "#345678", "#456789"]
     }
     {
         "id": 10,
@@ -106,28 +85,7 @@ The sample response looks like:
         "description": "test description 2",
         "created_at": "2023-04-10T08:38:43.000000Z",
         "updated_at": "2023-04-10T08:38:43.000000Z",
-        "colours": [
-            {
-                "id": 30,
-                "item_id": 10,
-                "colour": "#123456"
-            },
-            {
-                "id": 31,
-                "item_id": 10,
-                "colour": "#234567"
-            },
-            {
-                "id": 32,
-                "item_id": 10,
-                "colour": "#345678"
-            },
-            {
-                "id": 33,
-                "item_id": 10,
-                "colour": "#456789"
-            }
-        ]
+        "colours": ["#123456", "#234567", "#345678", "#456789"]
     }
 ]
 ```
