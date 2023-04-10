@@ -32,17 +32,17 @@ class GetTest extends TestCase
 
         $response->assertStatus(200);
 
-        $responseItem = json_decode($response->getContent(), true)[0];
+        $responseItem = json_decode($response->getContent(), true)['data'][0];
 
         $this->assertEquals($item->user_id, $responseItem['user_id']);
         $this->assertEquals($item->title, $responseItem['title']);
         $this->assertEquals($item->description, $responseItem['description']);
 
         $responseColours = $responseItem['colours'];
+        
+        $response->dump();
         $colours->each(function ($colour, $i) use ($responseColours) {
-            $this->assertEquals($colour->id, $responseColours[$i]['id']);
-            $this->assertEquals($colour->item_id, $responseColours[$i]['item_id']);
-            $this->assertEquals($colour->colour, $responseColours[$i]['colour']);
+            $this->assertEquals($colour->colour, $responseColours[$i]);
         });
     }
 }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Items\DeleteItemRequest;
 use App\Http\Requests\Items\StoreItemRequest;
 use App\Http\Requests\Items\UpdateItemRequest;
+use App\Http\Resources\ItemCollection;
+use App\Http\Resources\ItemResource;
 use App\Models\Colour;
 use App\Models\Item;
 use Illuminate\Http\Request;
@@ -20,7 +22,7 @@ class ItemController extends Controller
         $userId = $request->user()->id;
         $items = Item::with(['colours'])->where('user_id', $userId)->get();
 
-        return $items;
+        return ItemResource::collection($items);
     }
 
     /**
