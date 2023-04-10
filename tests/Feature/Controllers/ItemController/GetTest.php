@@ -39,8 +39,6 @@ class GetTest extends TestCase
         $this->assertEquals($item->description, $responseItem['description']);
 
         $responseColours = $responseItem['colours'];
-        
-        $response->dump();
         $colours->each(function ($colour, $i) use ($responseColours) {
             $this->assertEquals($colour->colour, $responseColours[$i]);
         });
