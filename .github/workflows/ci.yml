@@ -22,6 +22,7 @@ jobs:
     - name: setup laravel
       run: |
         cp .env.ci .env
+        touch database/database.sqlite
         php artisan key:generate
 
     - name: PHPUnit
