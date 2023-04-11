@@ -1,0 +1,25 @@
+name: Run test
+on: push
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    environment: CI
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v3
+
+    - name: setup PHP
+      uses: "shivammathur/setup-php@v2"
+      with:
+        php-version: "8.0"
+
+    - name: composer install
+      uses: "ramsey/composer-install@v2"
+      with:
+        composer-options: "--no-dev --ignore-platform-reqs"
+
+    - name: PHPUnit
+      uses: php-actions/phpunit@v3
+      with:
+        php_version: 8.0
