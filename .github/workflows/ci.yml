@@ -17,7 +17,7 @@ jobs:
     - name: composer install
       uses: "ramsey/composer-install@v2"
       with:
-        composer-options: "--no-dev --ignore-platform-reqs"
+        composer-options: "--ignore-platform-reqs"
 
     - name: setup laravel
       run: |
