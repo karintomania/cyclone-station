@@ -20,7 +20,9 @@ jobs:
         composer-options: "--no-dev --ignore-platform-reqs"
 
     - name: setup laravel
-      run: php artisan key:generate
+      run: |
+        cp .env.ci .env
+        php artisan key:generate
 
     - name: PHPUnit
       run: vendor/bin/phpunit tests/
