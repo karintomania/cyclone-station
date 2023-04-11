@@ -19,6 +19,10 @@ jobs:
       with:
         composer-options: "--no-dev --ignore-platform-reqs"
 
+    - name: debug ls
+      run: ls -la
+    - name: debug pwa
+      run: pwd
     - name: PHPUnit
       uses: php-actions/phpunit@v3
       with:
