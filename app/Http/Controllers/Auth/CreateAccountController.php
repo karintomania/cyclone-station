@@ -12,7 +12,8 @@ class CreateAccountController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request, CreateAccountService $createAccountService): Response {
+    public function __invoke(Request $request, CreateAccountService $createAccountService): Response
+    {
         $result = $createAccountService->__invoke(
             $request->post('name'),
             $request->post('email'),
